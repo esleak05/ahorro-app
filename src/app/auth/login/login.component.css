@@ -1,0 +1,19 @@
+main{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.login-container {
+  margin-top: 100px;
+  /* width: 100%; */
+
+}
+
+.container-input-login{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-input-login > input {
+  margin-bottom: 20px;
+}

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+// Servicios
+import { IngresosService } from './../services/ingresos.service';
 
 interface City {
   name: string;
@@ -13,7 +16,8 @@ interface City {
 export class IngresoComponent implements OnInit {
 
   public cities: City[];
-
+  public ingresos$: Observable<any[]> | undefined;
+  public ingresos: any[] = [];
   public selectedCity: any;
 
   public cars = [] = [
@@ -41,7 +45,7 @@ export class IngresoComponent implements OnInit {
       color: 'yellow'
     }
   ];
-  constructor() {
+  constructor(private  ingresoServices: IngresosService) {
     this.cities = [
       {name: '--Seleccione--', code: 'none', inactive: true},
       {name: 'Fijo', code: 'fj', inactive: false},
@@ -51,6 +55,16 @@ export class IngresoComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getIngresos();
+  }
+
+  private getIngresos(): void {
+    this.ingresoServices.getIngresos().subscribe(
+      ingresos => {
+        console.log(ingresos);
+        this.ingresos = ingresos;
+      }
+    );
   }
 
 }

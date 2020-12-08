@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Modulos personalizados.
 import { ComponentsModule } from './../../components/components.module';
@@ -25,7 +26,8 @@ import { PresupuestoComponent } from './presupuesto/presupuesto.component';
     CommonModule,
     ComponentsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [],
 })

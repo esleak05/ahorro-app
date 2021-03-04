@@ -1,3 +1,6 @@
+import { LayoutModule } from './layout/layout.module';
+import { SharedModule } from './shared/shared.module';
+import { RegistroHistoricoModule } from './registro-historico/registro-historico.module';
 // modulos core
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,10 +8,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // modulos personalizados.
 import { AuthModule } from './auth/auth.module';
-import { PagesModule } from './pages/pages.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 
 
 @NgModule({
@@ -19,8 +22,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    PagesModule,
-    AuthModule
+    RegistroHistoricoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,25 @@
+
 // Modulos core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Modulos personalizados.
-import { ComponentsModule } from './../components/components.module';
+
+import { PrimengModule } from '../shared/components/primeng/primeng.module';
+import { LayoutModule } from '../shared/components/layout/layout.module'
 
 // componentes personalzados.
-import { HeaderComponent } from './header/header.component';
-import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
-  declarations: [BreadcrumbsComponent, HeaderComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    ComponentsModule
+    LayoutModule,
+    PrimengModule
   ],
   exports: [
-    BreadcrumbsComponent,
-    HeaderComponent
+    LayoutModule,
+    PrimengModule
   ]
 })
 export class SharedModule { }
